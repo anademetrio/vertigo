@@ -1,10 +1,10 @@
 import { ReactElement } from "react"
 import { Btn } from "./styles"
-type Props = {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactElement | string
 }
-export default function Button({ children }: Props) {
+export default function Button({ children, ...props }: Props) {
   return (
-    <Btn>{children}</Btn>
+    <Btn {...props}>{children}</Btn>
   )
 }
